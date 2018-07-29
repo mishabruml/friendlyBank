@@ -22,11 +22,15 @@ struct Account // Data structure
     public int Overdraft;
 };
 
+
+
+    
+
+
 class BankProgram
 {
     static void printAccount(Account account) // Method to print all the account info
     {
-        
         Console.WriteLine("Account State: " + account.State);
         Console.WriteLine("Account Name: " + account.Name);
         Console.WriteLine("Account Address: " + account.Address);
@@ -38,19 +42,19 @@ class BankProgram
 
     public static void Main()
     {
-        // Create a new account and assign info
-        Account MishasAccount;
-        MishasAccount.State = AccountState.UnderAudit;
-        MishasAccount.Name = "Misha Bruml";
-        MishasAccount.Address = "5 Fake St.";
-        MishasAccount.AccountNumber = 22222;
-        MishasAccount.Balance = 10000;
-        MishasAccount.Overdraft = 1000;
+        // Create array of empty accounts
+        const int MAX_CUST = 50;
+        Account[] Bank = new Account[MAX_CUST];
 
-        printAccount(MishasAccount); // Call print method!
+        // Assign info to first account in bank
+        Bank[0].State = AccountState.Active;
+        Bank[0].Name = "Misha Bruml";
+        Bank[0].Address = "5 Fake St.";
+        Bank[0].AccountNumber = 12345;
+        Bank[0].Balance = 10000;
+        Bank[0].Overdraft = 1000;
 
+        printAccount(Bank[0]); // Call print method
     }
-
-
 }
 
